@@ -1,0 +1,12 @@
+extends layout.pug
+block layout
+    .bg-no-repeat.bg-center.h-screen.bg-cover.flex.justify-between(style="background-image: url('/img/lg-bg.svg')", class='pl-[122px] pr-[115px]')
+        form(action="/login", method="POST").h-full.flex.flex-col.justify-center.items-center.flex-grow
+            .text-center Welcome Back
+            .flex.flex-col.gap-3
+                each field in loginFields
+                    .flex.flex-col.gap-3
+                        label= field.label
+                        input.py-2.pl-2(placeholder=field.placeholder, type=field.type, name=field.name, id=field.name, class='border border-[#656ed3] rounded-[50px] w-[367px]')
+            input.text-white.mt-10(class=' rounded-[50px] bg-[#656ed3] w-[367px] text-center py-2', type='submit', value="Login")
+        img(src='/img/lg.svg')

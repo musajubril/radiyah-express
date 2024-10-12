@@ -1,0 +1,10 @@
+extends layout.pug
+block layout
+    .grid.grid-cols-4.gap-5.px-20
+        each product in products
+            a.flex.flex-col(class="rounded-[18.48px]", href=`/product/${product.id}`)
+                img(src=product.image, class='h-[303px] bg-[#F7F5F7] rounded-t-[18.48px]').object-center.object-contain
+                .flex.flex-col(class="bg-white pt-[21.88px] pr-[17px] pl-[20.71px]")
+                    .text-base= product.title
+                    .text-base= product.description
+                    .text-base= product.category
